@@ -3,6 +3,7 @@
 from .cli import welcome_user
 import prompt
 import random
+# from .brain_games import games
 
 
 def ask_question(name):
@@ -17,7 +18,8 @@ def ask_question(name):
         return True
     else:
         print(f"'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, {name}!")
-        return False
+        exit()
+        # return False
     
 
 def main():
