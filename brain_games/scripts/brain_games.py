@@ -3,7 +3,8 @@ from brain_games.cli import welcome_user
 
 
 def welcome():
-    main()
+    name=main()
+    return name
 
 
 def main():
