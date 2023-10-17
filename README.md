@@ -4,3 +4,6 @@
 
 # Step 5 asciinema
 https://asciinema.org/a/1n95nW3udY3X1H19MggADqChf
+
+# Step 6 asciinema
+https://asciinema.org/a/kokyPqu6UE9IEP6Pxbs4faCvr
