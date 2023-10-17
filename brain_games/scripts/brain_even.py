@@ -3,20 +3,23 @@
 # from cli import welcome_user
 import prompt
 import random
+# import question o
+from brain_games.scripts.brain_games import welcome
 # from .brain_games import games
 
 
-def welcome_user():
-    print('Welcome to the Brain Games!')
-    # print("May I have your name?", end='')
-    name = prompt.string('May I have your name? ')
-    print(f'Hello, {name}!')
-    return name
+# def welcome_user():
+#     print('Welcome to the Brain Games!')
+#     # print("May I have your name?", end='')
+#     name = prompt.string('May I have your name? ')
+#     print(f'Hello, {name}!')
+#     return name
 
 
 def ask_question(name):
-    number = random.randint(0, 1000)
+    number = random.randint(0, 10)
     answer = prompt.string(f'Question: {number}\nYour answer: ')
+    # answer=ask_question(f'Question: {number}\nYour answer: ')
     # print(answer.lower())    
     if (number%2==0 and answer.lower()=='yes') or (number%2==1 and answer.lower()=='no'):
         print('Correct!')
@@ -37,9 +40,8 @@ def ask_question(name):
     
 
 def main():
-    # print("May I have your name?", end='')
     counter=3
-    name=welcome_user()
+    name=welcome()
     print('Answer "yes" if the number is even, otherwise answer "no".')
     while counter!=0:
         question_result = ask_question(name)
