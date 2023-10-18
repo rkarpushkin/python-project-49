@@ -15,21 +15,20 @@ def check_answer(number1, number2, answer):
 
     denominators = list()
 
-    for i in range(1,min+1):
-        if min%i == 0:
+    for i in range(1, min+1):
+        if min % i == 0:
             denominators.append(i)
 
     for i in denominators:
-        if max%i==0:
+        if max % i == 0:
             gcd = i
-    
+
     if gcd == answer:
         # print('wrong!')
         return 0
     else:
         print(gcd)
         return gcd
-
 
 
 def ask_question(name):
@@ -47,11 +46,12 @@ def ask_question(name):
         print(f"{answer} is not integer. Let's try again")
         answer = prompt.string(f'Question: {number1} {number2}\nYour answer: ')
 
-    results=check_answer(number1, number2, int(answer))
+    results = check_answer(number1, number2, int(answer))
     # print(f'Result is {results}')
     # print(f'Name is {name}')
     if results != 0:
-        print(f"'{answer}' is wrong answer ;(. Correct answer was '{results}'.\nLet's try again, {name}!")
+        print(f"'{answer}' is wrong answer ;(. Correct answer was '{results}'.\
+              \nLet's try again, {name}!")
         exit()
     else:
         print('Correct!')
@@ -59,17 +59,17 @@ def ask_question(name):
 
 
 def main():
-    counter=3
-    name=welcome()
+    counter = 3
+    name = welcome()
     print('Find the greatest common divisor of given numbers.')
-    while counter!=0:
+    while counter != 0:
         # print(name)
         question_result = ask_question(name)
         if question_result:
-            counter-=1
+            counter -= 1
             # print(counter)ß
         if not question_result:
-            counter=3
+            counter = 3
             # print(counter)
     print(f'Congratulations, {name}!')
 

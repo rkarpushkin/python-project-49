@@ -12,12 +12,12 @@ def check_answer(number1, number2, function, answer):
 
     if function == '-' and number1 - number2 == answer:
         return True
-    elif  function == '-':
+    elif function == '-':
         result = number1 - number2
-    
+
     if function == '*' and number1 * number2 == answer:
         return True
-    elif  function == '*':
+    elif function == '*':
         result = number1 * number2
     return result
 
@@ -28,20 +28,23 @@ def ask_question(name):
     # function_list = {{sqrt: '*'}, {sum: '+'}, {dis: '-'}}
     functions_list = ['-', '+', '*']
     function = random.choice(functions_list)
-    answer = prompt.string(f'Question: {number1} {function} {number2}\nYour answer: ')
+    answer = prompt.string(f'Question: {number1} {function} {number2}\
+                           \nYour answer: ')
 
     try:
         int(answer)
         pass
     except:
         print(f"{answer} is not integer. Let's try again")
-        answer = prompt.string(f'Question: {number1} {function} {number2}\nYour answer: ')
+        answer = prompt.string(f'Question: {number1} {function} {number2}\
+                               \nYour answer: ')
 
-    results=check_answer(number1, number2, function, int(answer))
+    results = check_answer(number1, number2, function, int(answer))
     # print(f'Result is {results}')
     # print(f'Name is {name}')
-    if results != True:
-        print(f"'{answer}' is wrong answer ;(. Correct answer was '{results}'.\nLet's try again, {name}!")
+    if not results:
+        print(f"'{answer}' is wrong answer ;(. Correct answer was '{results}'.\
+              \nLet's try again, {name}!")
         exit()
     else:
         print('Correct!')
@@ -49,17 +52,17 @@ def ask_question(name):
 
 
 def main():
-    counter=3
-    name=welcome()
+    counter = 3
+    name = welcome()
     print('What is the result of the expression?')
-    while counter!=0:
+    while counter != 0:
         # print(name)
         question_result = ask_question(name)
-        if question_result==True:
-            counter-=1
+        if question_result:
+            counter -= 1
             # print(counter)ß
-        if question_result==False:
-            counter=3
+        if not question_result:
+            counter = 3
             # print(counter)
     print(f'Congratulations, {name}!')
 

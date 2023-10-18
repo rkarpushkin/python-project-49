@@ -3,13 +3,13 @@ from brain_games.cli import welcome_user
 
 
 def welcome():
-    name=main()
+    name = main()
     return name
 
 
 def main():
     print('Welcome to the Brain Games!')
-    name=welcome_user()
+    name = welcome_user()
     return name
 
 
