@@ -53,7 +53,7 @@ def main():
     name=welcome()
     print('What is the result of the expression?')
     while counter!=0:
-        print(name)
+        # print(name)
         question_result = ask_question(name)
         if question_result==True:
             counter-=1
